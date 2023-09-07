@@ -35,6 +35,23 @@ ul li a{
     font-size: 12px;
     font-weight: 500;
 }
+#cursor{
+    height: 20px;
+    width: 20px;
+    background-color: #95c11e;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 99;
+}
+#cursor-blur{
+    height: 400px;
+    width: 400px;
+    background-color: #c1e7503d;
+    border-radius: 50%;
+    position: fixed;
+    filter: blur(50px);
+    z-index: 9;
+}
 video{
     height: 100%;
     width: 100%;
@@ -55,6 +72,7 @@ video{
     justify-content: center;
     flex-direction: column;
     text-align: center;
+    z-index: 10;
 }
 #page1 h1{
     font-size: 90px;
@@ -87,5 +105,90 @@ video{
 #page2{
     height: 100vh;
     width: 100%;
+    z-index: 10;
+}
+#scroller{
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    z-index: 10;
+}
+#scroller::-webkit-scrollbar{
+    display: none;
+}
+#scroller-in{
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+#scroller-in h4{
+    display: inline-block;
+    font-size: 70px;
+    margin-right: 10px;
+    color: transparent;
+    font-family: Open Sans, sans-serif;
+    transition: all linear 0.5s;
+    -webkit-text-stroke: 1px #fff;
+}
+#scroller-in h4:hover{
+    color: #95c11e;
+    -webkit-text-stroke: 0;
+
 }
 
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+#about-us{
+    height: 70vh;
+    width: 100%;
+    /* background-color: red; */
+    padding: 0 50px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: space-around;
+}
+#about-us img{
+    height: 150px;
+    width: 150px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+#about-us-in{
+    width: 55%;
+    text-align: center;
+}
+#about-us-in h3{
+    font-size: 35px;
+}
+#about-us-in p{
+    font-size: 18px;
+    padding-top: 30px;
+    line-height: 30px;
+}
+
+#cards-container{
+    height: 60vh;
+    width: 100%;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+.card{
+    height: 80%;
+    width: 20%;
+    background-color: #95c11e;
+}
